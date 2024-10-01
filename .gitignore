@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+=======
 # Logs
 logs
 *.log
@@ -24,3 +49,4 @@ dist-ssr
 *.sw?
 
 .env
+>>>>>>> e43d45bb65fb5b4f9c2f8907e8b26949bfbf0ce1
