@@ -2,8 +2,8 @@ import React from "react";
 
 function BookCard({ book }) {
     return (
-        <Link to={`/books/${book.id}`}>
-            <h3>{book.title}</h3>
+        <Link to={`/books/${book.id}`} className="book-card">
+            <h3 >{book.title}</h3>
             <img src={book.coverimage} alt={book.title} />
         </Link>
     );
