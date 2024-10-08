@@ -2,10 +2,10 @@ import React from "react";
 
 function BookCard({ book }) {
     return (
-        <div>
+        <Link to={`/books/${book.id}`}>
             <h3>{book.title}</h3>
             <img src={book.coverimage} alt={book.title} />
-        </div>
+        </Link>
     );
 }
 
