@@ -1,10 +1,8 @@
 import React from "react";
 
-import React from 'react'
-
-function BookCard() {
+function BookCard({ book }) {
     return (
-        <div key={book.id}>
+        <div>
             <h3>{book.title}</h3>
             <img src={book.coverimage} alt={book.title} />
         </div>
