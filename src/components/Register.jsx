@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Register() {
+function Register({token, setToken}) {
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({});
   const [token, setToken] = useState(null);
@@ -30,9 +30,15 @@ function Register() {
   console.log(newUser);
   return (
     <div className='register-container'>
-      {token}
       <h2>Register Here</h2>
-      <form className="register-form" onSubmit=(handleSubmit)>
+      <form className="register-form" onSubmit={handleSubmit}>
+        <label>
+          <p>First Name (Optional)</p>
+          <input type="text" name="firstname" onChange={handleInputChange} />
+        </label>
+      {token}
+      
+      
     </div>
   )
 }
