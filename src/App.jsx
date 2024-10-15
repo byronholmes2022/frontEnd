@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import bookLogo from './assets/books.png';
 import Books from "./components/Books";
@@ -6,11 +6,19 @@ import Account from "./components/Account";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navigations from "./components/Navigations";
+import SingleBook from "./components/SingleBook";
+import '../styles/main.scss';
 
 
 function App() {
   const [token, setToken] = useState(null);
 
+  useEffect(() => (
+    const localToken = localStorage.getItem("token");
+  if (localToken) {
+    setToken(localToken);
+  }
+  ), []);
   return (
     <>
       <h1>
