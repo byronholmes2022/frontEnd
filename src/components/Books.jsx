@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import BookList from './BookList/BookList';
-import axios from 'axios';
-
+import React, { useEffect, useState } from "react";
+import BookList from "./BookList/BookList";
+import axios from "axios";
 
 function Books() {
   const [bookData, setBookData] = useState([]);
@@ -16,9 +15,9 @@ function Books() {
   }, []);
 
   return (
-    <>
-      <BookList />
-    </>
+    <div>
+      <BookList bookData={bookData} />
+    </div>
   );
 }
 

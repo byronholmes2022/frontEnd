@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Login({token, setToken}) {
+function Login({ token, setToken }) {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({});
 
@@ -21,7 +21,7 @@ function Login({token, setToken}) {
       if (data.data.token) {
         localStorage.setItem("token", data.data.token);
         setToken(data.data.token);
-        Navigate("/me");
+        navigate("/me");
       }
     } catch (err) {
       console.log(err);
@@ -30,22 +30,32 @@ function Login({token, setToken}) {
 
   console.log(loginData);
   return (
-    <div className='register-container'>
+    <div className="register-container">
       <h2>Login</h2>
-      <form className='register-form' onSubmit={handleLoginSubmit}>
+      <form
+        className="register-form"
+        onSubmit={handleLoginSubmit}
+      >
         <label>
           <p>Email</p>
-          <input type='email' name='email' onChange={handleUserInput} />
+          <input
+            type="email"
+            name="email"
+            onChange={handleUserInput}
+          />
         </label>
         <label>
           <p>Password</p>
-          <input type="password" />
+          <input
+            type="password"
+            name="password"
+            onChange={handleUserInput}
+          />
         </label>
         <button>Login</button>
       </form>
     </div>
   );
+}
 
-};
-
-export default Login
+export default Login;

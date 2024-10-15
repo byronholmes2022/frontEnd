@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Register({token, setToken}) {
+function Register({ token, setToken }) {
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({});
   const [token, setToken] = useState(null);
@@ -29,18 +29,48 @@ function Register({token, setToken}) {
   };
   console.log(newUser);
   return (
-    <div className='register-container'>
+    <div className="register-container">
       <h2>Register Here</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form
+        className="register-form"
+        onSubmit={handleSubmit}
+      >
         <label>
           <p>First Name (Optional)</p>
-          <input type="text" name="firstname" onChange={handleInputChange} />
+          <input
+            type="text"
+            name="firstname"
+            onChange={handleInputChange}
+          />
         </label>
-      {token}
-      
-      
+        <label>
+          <p>Last Name (Optional)</p>
+          <input
+            type="text"
+            name="lastname"
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          <p>Email</p>
+          <input
+            type="email"
+            name="email"
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          <p>Password</p>
+          <input
+            type="password"
+            name="password"
+            onChange={handleInputChange}
+          />
+        </label>
+        <button>Register Now!</button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

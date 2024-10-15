@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navigations({ token, setToken }) {
   const navigate = useNavigate();
@@ -24,4 +24,4 @@ function Navigations({ token, setToken }) {
   );
 }
 
-export default Navigations
+export default Navigations;
