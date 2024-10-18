@@ -6,7 +6,7 @@ function Books() {
   const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
-    axios(`${REACT_APP_API_BASE_URL}/api/books`)
+    axios(`${process.env.REACT_APP_API_BASE_URL}/api/books`)
       .then((data) => {
         console.log(data);
         setBookData(data.data.books);
@@ -16,6 +16,7 @@ function Books() {
 
   return (
     <div>
+      {process.env.REACT_APP_API_BASE_URL}
       <BookList bookData={bookData} />
     </div>
   );
