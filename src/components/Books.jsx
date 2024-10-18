@@ -15,9 +15,9 @@ function Books() {
   }, []);
 
   return (
-    <>
-      <BookList />
-    </>
+    <div>
+      <BookList bookData={bookData} />
+    </div>
   );
 }
 

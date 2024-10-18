@@ -32,6 +32,10 @@ function App() {
         token={token}
         setToken={setToken}
       />
+      <Navigations
+        token={token}
+        setToken={setToken}
+      />
       <Routes>
         <Route
           path="/"
