@@ -21,60 +21,26 @@ function App() {
   return (
     <>
       <h1>
-        <img
-          id="logo-image"
-          src={bookLogo}
-        />
+        <img id="logo-image" src={bookLogo} />
         Library App
       </h1>
-      {import.meta.env.VITE_API_BASE_URL}
-      <Navigations
-        token={token}
-        setToken={setToken}
-      />
-      <Navigations
-        token={token}
-        setToken={setToken}
-      />
+      {process.env.VITE_API_BASE_URL}
+      <Navigations token={token} setToken={setToken} />
+      <Navigations token={token} setToken={setToken} />
       <Routes>
-        <Route
-          path="/"
-          element={<Books />}
-        />
-        <Route
-          path="/me"
-          element={<Account />}
-        />
+        <Route path="/" element={<Books />} />
+        <Route path="/me" element={<Account />} />
         <Route
           path="/login"
-          element={
-            <Login
-              token={token}
-              setToken={setToken}
-            />
-          }
+          element={<Login token={token} setToken={setToken} />}
         />
         <Route
           path="/Register"
-          element={
-            <Register
-              token={token}
-              setToken={setToken}
-            />
-          }
+          element={<Register token={token} setToken={setToken} />}
         />
-        <Route
-          path="/books/:bookid"
-          element={<SingleBook token={token} />}
-        />
-        <Route
-          path="/books/:bookid"
-          element={<SingleBook />}
-        />
-        <Route
-          path="*"
-          element={<Books />}
-        />
+        <Route path="/books/:bookid" element={<SingleBook token={token} />} />
+        <Route path="/books/:bookid" element={<SingleBook />} />
+        <Route path="*" element={<Books />} />
       </Routes>
     </>
   );
