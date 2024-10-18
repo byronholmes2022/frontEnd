@@ -15,9 +15,9 @@ function App() {
 
   useEffect(() => (
     const localToken = localStorage.getItem("token");
-  if (localToken) {
-    setToken(localToken);
-  }
+    if (localToken) {
+      setToken(localToken);
+    }
   ), []);
   return (
     <>
@@ -26,14 +26,32 @@ function App() {
         Library App
       </h1>
       {import.meta.env.VITE_API_BASE_URL}
-      <Navigations />
+      <Navigations token={token} setToken={setToken} />
       <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/me" element={<Account />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/books/:bookid" element={<SingleBook />} />
-        <Route path="*" element={<Books />} />
+        <Route
+          path="/"
+          element={<Books />}
+        />
+        <Route
+          path="/me"
+          element={<Account />}
+        />
+        <Route
+          path="/login"
+          element={<Login token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/Register"
+          element={<Register token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/books/:bookid"
+          element={<SingleBook />}
+        />
+        <Route
+          path="*"
+          element={<Books />}
+        />
       </Routes>
     </>
   );
