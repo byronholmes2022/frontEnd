@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login({ token, setToken }) {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({});
+  const [hasError, setHasError] = useState(null);
 
   const handleUserInput = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -25,6 +26,7 @@ function Login({ token, setToken }) {
       }
     } catch (err) {
       console.log(err);
+      setHasError(err.response.data.message);
     }
   };
 
@@ -54,6 +56,10 @@ function Login({ token, setToken }) {
         </label>
         <button>Login</button>
       </form>
+      {hasError && <p className="auth-error">{error}</p>}
+      <p>
+        Need an Account? Sign up <Link to="Register">Here</Link>
+      </p>
     </div>
   );
 }
