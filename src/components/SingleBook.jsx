@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 function SingleBook() {
   const { bookid } = useParams();
@@ -15,16 +15,16 @@ function SingleBook() {
       .catch((err) => console.log(err));
   }, []);
 
-
   return (
-    <div className='single-book-container'>
+    <div className="single-book-container">
       <h2>{book?.title}</h2>
       <p>{book?.author}</p>
       <img
         src={book?.coverimage}
-        alt={`Cover image for ${book?.title} by ${book?.author}`} />
+        alt={`Cover image for ${book?.title} by ${book?.author}`}
+      />
     </div>
   );
 }
 
-export default SingleBook
+export default SingleBook;

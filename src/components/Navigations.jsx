@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Navigations() {
   return (
@@ -16,4 +16,4 @@ function Navigations() {
   );
 }
 
-export default Navigations
+export default Navigations;

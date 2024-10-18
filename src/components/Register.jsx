@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Register() {
   const navigate = useNavigate();
@@ -29,12 +29,15 @@ function Register() {
   };
   console.log(newUser);
   return (
-    <div className='register-container'>
+    <div className="register-container">
       {token}
       <h2>Register Here</h2>
-      <form className="register-form" onSubmit=(handleSubmit)>
+      <form
+        className="register-form"
+        onSubmit={handleSubmit}
+      ></form>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
